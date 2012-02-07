@@ -98,6 +98,26 @@ in the future this header will a dynamic library...
 #define CLR_MFLAG(N, F)       ( (N) &= ~(F) )
 #define GET_MFLAG(N, F)       ( (N) & (F) )
 
+// COLORS macros
+#define LAST "\033[0m"
+#define WHITE "\033[01;37m"
+#define BLACK "\033[22;30m"
+#define RED "\033[22;31m"
+#define GREEN "\033[22;32m"
+#define BLUE "\033[22;34m"
+#define CYAN "\033[22;36m"
+#define GRAY "\033[22;37m"
+#define DGRAY "\033[01;30m"
+#define LRED "\033[01;31m"
+#define LGREEN "\033[01;32m"
+#define YELLOW "\033[01;33m"
+#define LBLUE "\033[01;34m"
+#define LMAGENTA "\033[01;35m"
+#define MAGENTA "\033[22;35m"
+#define LCYAN "\033[01;36m"
+#define BROWN "\033[22;33m"
+
+
 #define BUGVIEW 1
 
 #define DEBUG(x, s...) do { \
