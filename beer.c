@@ -763,7 +763,7 @@ char *strrev(char *str)
 
 char *StrChunk(char *src, const int start, const int count)
 {
- char *tmp,*tmp2;
+ char *tmp;
  tmp = (char *)xmalloc(count+1);
  if (tmp == NULL) 
  {
@@ -773,7 +773,6 @@ char *StrChunk(char *src, const int start, const int count)
 
  strncpy(tmp, src+start, count);
  tmp[count] = '\0';
- strncpy(tmp2,tmp,count);
  
  free(tmp);
 
