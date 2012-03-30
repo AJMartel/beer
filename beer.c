@@ -779,6 +779,27 @@ char *StrChunk(char *src, const int start, const int count)
  return tmp;
 }
 
+//string replace
+char *StrRep(char *st,char *orig,char *repl,int mim) 
+{
+ char bufer[mim];
+ char *ch;
+
+ if(!orig)
+  return "\0";
+
+ if(!(ch=strstr(st, orig)) )
+  return st;
+
+ strncpy(bufer, st, ch-st);  
+ bufer[ch-st] = 0;
+ sprintf(bufer+(ch-st),"%s%s",repl,ch+strlen(orig));
+
+ char *out=bufer;
+
+ return out;
+}
+
 // simple split return array of strings between string separator
 char **split(char *src, const char *token, int *total)
 { 
