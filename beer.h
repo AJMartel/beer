@@ -44,3 +44,4 @@ char *StrChunk(char *src, const int start, const int count);
 char *StrRep(char *st,char *orig,char *repl,int mim);
 char **split(char *src, const char *token, int *total);
 void strings(FILE *fp);
+short TestAnagram(char *str1, char *str2);
