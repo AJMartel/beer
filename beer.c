@@ -864,6 +864,34 @@ char **split(char *src, const char *token, int *total)
  return str;
 }
 
+// return 1 if string is anagram
+short TestAnagram(char *str1, char *str2)
+{
+ int i=0;
+ int count1[BUF] = {0};
+ int count2[BUF] = {0};
+
+ do{
+  count1[str1[i]]++;
+  count2[str2[i]]++;
+  i++;
+ }while(str1[i] && str2[i]);
+ 
+ if(str1[i] || str2[i])
+  return 0;
+
+ i=0; 
+  
+ while(i < BUF)
+ {
+  if(count1[i] != count2[i])
+   return 0;
+  i++;
+ }
+
+ return 1;
+}
+
 // return string of bin file, coded by Mente Binária "http://www.mentebinaria.com.br/"
 void strings(FILE *fp)
 {
