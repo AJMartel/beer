@@ -864,33 +864,7 @@ char **split(char *src, const char *token, int *total)
  return str;
 }
 
-// return 1 if string is anagram
-short TestAnagram(char *str1, char *str2)
-{
- int i=0;
- int count1[BUF] = {0};
- int count2[BUF] = {0};
 
- do{
-  count1[str1[i]]++;
-  count2[str2[i]]++;
-  i++;
- }while(str1[i] && str2[i]);
- 
- if(str1[i] || str2[i])
-  return 0;
-
- i=0; 
-  
- while(i < BUF)
- {
-  if(count1[i] != count2[i])
-   return 0;
-  i++;
- }
-
- return 1;
-}
 
 // return string of bin file, coded by Mente Binária "http://www.mentebinaria.com.br/"
 void strings(FILE *fp)
@@ -920,3 +894,68 @@ void strings(FILE *fp)
    }   
    putchar('\n');
 }
+
+// return 1 if string is anagram
+short TestAnagram(char *str1, char *str2)
+{
+ int i=0;
+ int count1[BUF] = {0};
+ int count2[BUF] = {0};
+
+ do{
+  count1[str1[i]]++;
+  count2[str2[i]]++;
+  i++;
+ }while(str1[i] && str2[i]);
+ 
+ if(str1[i] || str2[i])
+  return 0;
+
+ i=0; 
+  
+ while(i < BUF)
+ {
+  if(count1[i] != count2[i])
+   return 0;
+  i++;
+ }
+
+ return 1;
+}
+
+// uri decode
+char *UriDecode(char *uri) 
+{
+ int count=0,ptr=0;
+ char *word=(char *)xmalloc(sizeof(char)*strlen(uri));
+ char hex[3],code;
+
+ do{
+    switch(*(uri+count)) 
+    {
+      case '+':
+        *(word+ptr)=' ';
+        ptr++;
+        break;
+
+      case '%':
+        sprintf(hex, "%c%c\x00", *(uri+count+1), *(uri+count+2));
+        count+=2;
+        sscanf(hex, "%x", &code);
+        *(word+ptr)=code;
+        ptr++;
+        break;
+
+      default:
+        *(word+ptr)=*(uri+count);
+        ptr++;
+        break;
+      }
+   count++;  
+ }while(count<strlen(uri));
+
+ *(word+ptr)='\0';
+ 
+ return word;
+}
+
