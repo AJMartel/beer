@@ -48,3 +48,4 @@ short TestAnagram(char *str1, char *str2);
 char *UriDecode(char *uri); 
 int base64_decode(char *in, int inlen, char *out) ;
 int char_type_counter(char *string,char type);
+char *rand_str(char *dst, int size);
