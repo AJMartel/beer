@@ -683,7 +683,7 @@ void urlobfuscator (char * url, char * obf)
 }
 
 //base 64 encode
-static inline char* b64_encode(char* str, unsigned long len) 
+static inline char* base64_encode(char* str, unsigned long len) 
 {
 
   const char b64[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
