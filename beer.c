@@ -31,7 +31,7 @@ Beer simple C header
 
 Authors: Cooler_,m0nad,ryonagana,b4r0n,utroz,mentebinaria
 E-mail: c00f3r[at]gmail[dot]com
-date: 03/08/2011
+date: 01/01/2010
 
 thanks: 
   _mlk_,m0nad,
@@ -1023,4 +1023,17 @@ int base64_decode(char *in, int inlen, char *out)
   }
 
   return 0;
+}
+
+int char_type_counter(char *string,char type)
+{
+ int counter=0;
+ 
+ while(*string != '\0')
+ {
+  if(*string==type) 
+   counter++;
+  string++;
+ }
+ return counter;
 }
