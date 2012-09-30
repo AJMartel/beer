@@ -959,3 +959,68 @@ char *UriDecode(char *uri)
  return word;
 }
 
+int base64_decode(char *in, int inlen, char *out) 
+{
+  int i,y;
+  char *entrada=NULL,*saida=NULL,*ptr=NULL;
+  char array[4];
+
+  entrada=in;
+  saida=out;
+
+  for(i=0; i<inlen; i+=4) 
+  {
+
+    if(*entrada == '=')
+     return 0;
+
+    memcpy(array,entrada,4);
+    memset(saida,0,3);
+
+// desmapeia
+    for(y=0; y<4; y++) 
+    {
+     ptr = array+y;
+
+     if(*ptr>='A' && *ptr<='Z') 
+     {
+       *ptr-='A';
+       continue;
+     }  
+
+     if(*ptr>='a' && *ptr<='z') 
+     {
+      *ptr-='a';
+      *ptr+=26;
+      continue;
+     }
+
+     if(*ptr == '+') 
+     {
+       *ptr=62;
+       continue;
+     }
+
+     if(*ptr == '/') 
+     {
+       *ptr=63;
+       continue;
+     }
+
+     if(*ptr == '=') 
+      *ptr=0;
+
+     *ptr-='0';
+     *ptr+=52;
+    }
+
+    saida[0]= ((array[1]>>4) & 3) | ((array[0]<<2) & 0xfc);
+    saida[1]= ((array[2]>>2) & 0xf) | ((array[1]<<4) & 0xf0);
+    saida[2]=((array[2]<<6) & 0xc0) | ((array[3]) & 0x3f);
+    entrada+=4;
+    saida+=3;
+  
+  }
+
+  return 0;
+}
