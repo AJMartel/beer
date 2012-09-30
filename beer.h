@@ -37,7 +37,7 @@ char *RandomIp(void);
 int email_isvalid(const char *address);
 char *scapeSQL(const char *input, char quote, int wildcards);
 void urlobfuscator (char * url, char * obf);
-static inline char* b64_encode(char* str, unsigned long len);
+static inline char* base64_encode(char* str, unsigned long len);
 void changeCharacter(char *dest, const char* str, const char search, const char replace);
 char *strrev(char *str);
 char *StrChunk(char *src, const int start, const int count);
@@ -46,3 +46,4 @@ char **split(char *src, const char *token, int *total);
 void strings(FILE *fp);
 short TestAnagram(char *str1, char *str2);
 char *UriDecode(char *uri); 
+int base64_decode(char *in, int inlen, char *out) 
