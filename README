@@ -1,4 +1,3 @@
-
        _____________
       (             )
       (____________ )
@@ -30,20 +29,20 @@ E-mail: c00f3r[at]gmail[dot]com
 date: 03/08/2011
 
 thanks: 
-  _mlk_,m0nad,
+  slyfunky,m0nad,
   I4K,sigsegv,b-man,kov,utroz,eremitah,vorazbr,mentebinaria
   delfo,c0lt7r,B4r0n,joey,fokerbug,
   zepplin,voidpointer,muzgo,memset,b4r0n,novato_br...
   
-  Beer is a C header to help you in small problems
+  Beer is a C library to help you in small problems
 
-Have a lot functions how
+Have lot functions how
 math functions(mmc,mdc,bitwise_sqrt,quadratic equation,factorial,test if number is prime..)
-parsers,
 string functions (split,strrev..),
 validate e-mail,
 SQL query filter,
-Files Jobs how READ,WRITE,COPY,list DIRs,bytes of file...
+Files Jobs how READ,WRITE,COPY,list DIRs files ,bytes of file...
+base64 encode and decode.
 
 strings,numbers convert
 
