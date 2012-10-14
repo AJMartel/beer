@@ -1054,3 +1054,34 @@ char *rand_str(char *dst, int size)
 
  return dst;
 }
+
+const char *bitwise_search(const char *text, const char *pattern)
+{
+ int num = strlen(pattern),i=0;
+ unsigned long X;
+ unsigned long mask[CHAR_MAX+1];
+ 
+  if (pattern[0] == '\0') 
+   return text;
+ 
+  if (num > 31) 
+   return "The pattern is too long!";
+ 
+  X = ~1;
+ 
+  for (i=0; i <= CHAR_MAX; ++i)
+   mask[i] = ~0;
+
+  for (i=0; i < num; ++i)
+   mask[pattern[i]] &= ~(1UL << i);
+ 
+  for (i=0; text[i] != '\0'; ++i) 
+  {
+   X |= mask[text[i]];
+   X <<= 1;
+   if (!(X & (1UL << num)))
+    return (text + i - num) + 1;
+  }
+ 
+ return NULL;
+}
