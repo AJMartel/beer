@@ -49,4 +49,4 @@ char *UriDecode(char *uri);
 int base64_decode(char *in, int inlen, char *out) ;
 int char_type_counter(char *string,char type);
 char *rand_str(char *dst, int size);
-const char *bitwise_search(const char *text, const char *pattern);
+const char *bitwise_string_search(const char *text, const char *pattern);
