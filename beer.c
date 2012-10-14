@@ -1054,8 +1054,8 @@ char *rand_str(char *dst, int size)
 
  return dst;
 }
-
-const char *bitwise_search(const char *text, const char *pattern)
+// search pattern on text
+const char *bitwise_string_search(const char *text, const char *pattern)
 {
  int num = strlen(pattern),i=0;
  unsigned long X;
