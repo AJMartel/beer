@@ -466,6 +466,18 @@ long FileSize(const char *file)
   return ret;
 }
 
+// count number of lines
+int count_lines(char *instring)
+{
+ int counter = 0;
+ char *scratch, *txt, *delimiter = "\n";
+
+ while ((txt = strtok_r(!counter ? instring : NULL, delimiter, &scratch)))
+  counter++;
+
+ return counter;
+}
+
 
 /* #################################################################################
  to use with Sort functions
