@@ -29,6 +29,8 @@ int WriteFile(char *file,char *str);
 const char *readLine(char * NameFile);
 char *ListDir(char *file2list,int MAX);
 long FileSize(const char *file);
+// count number of lines
+int count_lines(char *instring);
 int sort_char( const void *a, const void *b);
 int sort_int(const void *a, const void *b);
 void mergesort(int *array, size_t first, size_t last);
