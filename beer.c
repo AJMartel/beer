@@ -410,7 +410,7 @@ const char *readLine(char * NameFile)
   return;
  }
 
- while(fgets(line,sizeof line,file))  
+ while(fgets(line,sizeof line-1,file))  
  {
   lineBuffer=realloc(lineBuffer,strlen(lineBuffer)+strlen(line)+1);
   if(!lineBuffer)
