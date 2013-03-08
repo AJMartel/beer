@@ -35,7 +35,7 @@ date: 01/01/2010
 
 thanks: 
   _mlk_,m0nad,
-  I4K,sigsegv,b-man,kov,utroz,eremitah,maycon(outbound),vorazbr,mentebinaria
+  I4K,sigsegv,b-man,kov,utroz,eremitah,maycon(0ut0fBound),vorazbr,mentebinaria
   delfo,c0lt7r,B4r0n,joey,fokerbug,
   zepplin,voidpointer,muzgo,memset,b4r0n,novato_br...
   
