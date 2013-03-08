@@ -587,7 +587,7 @@ char *RandomIp(void)
  r3 = 1+(int) (255.0*rand()/(RAND_MAX+1.0));          
  r4 = 1+(int) (255.0*rand()/(RAND_MAX+1.0));          
 
- ipRand=xmalloc(12*sizeof(char *));
+ ipRand=xmalloc(16*sizeof(char));
  sprintf(ipRand,"%d.%d.%d.%d",r1,r2,r3,r4); 
 
  return ipRand; 
