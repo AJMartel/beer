@@ -329,18 +329,22 @@ int bit_sqrt(int num)
 }
 
 // test if is palindrome
-int palindrome(const char *s)
-{
-  int x,y;
-  
+ int palindrome(const char *s)
+ {
+  int x=0,y=0;
+
   y = strlen(s);
-  for(x=0; x<y/2; x++)
+  y>>=1;
+
+  while(x<y)
   {
-   if( s[x] != s[y-x-1] ) 
-    return 0; 
+   if( s[x] != s[y-x-1] )
+    return 0;
+   x++;
   }
   return 1;
-}
+ }
+
 
 // return time
 // example OutPut Wed Aug  3 18:26:24 2011
