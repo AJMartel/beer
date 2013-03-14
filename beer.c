@@ -140,6 +140,21 @@ void *xmalloc(unsigned int len)
  return ptr;
 }
 
+// bitwise div by seven ,by Cooler_ 
+unsigned bit_div7(unsigned num)
+{   
+ unsigned x,y;
+
+ x=(num>>1)+(num>>4); 
+ x+=x>>6;
+ x+=(x>>12)+(x>>24);
+ x>>=2;
+ y=num-((x<<3)-x);
+
+ return x+((y+1)>>3);
+} 
+
+
 // convert decimal to binary
 char * dec2bin(int n, char * string)
 { 
