@@ -11,6 +11,7 @@
 #define __BEER_H__
 
 void *xmalloc(unsigned int len);
+unsigned bit_div7(unsigned num);
 char * dec2bin(int n, char * string);
 char Hex2Char(char *Hex);
 static char char2Hex(unsigned char c);
