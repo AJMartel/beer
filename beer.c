@@ -140,7 +140,7 @@ void *xmalloc(unsigned int len)
  return ptr;
 }
 
-// bitwise div by seven ,by Cooler_ 
+// bitwise div seven ,by Cooler_ 
 unsigned bit_div7(unsigned num)
 {   
  unsigned x,y;
