@@ -140,7 +140,7 @@ void *xmalloc(unsigned int len)
  return ptr;
 }
 
-// bitwise div seven ,by Cooler_ 
+// bitwise div seven , faster than "n/7",by Cooler_ 
 unsigned bit_div7(unsigned num)
 {   
  unsigned x,y;
@@ -153,6 +153,23 @@ unsigned bit_div7(unsigned num)
 
  return x+((y+1)>>3);
 } 
+
+// bitwise div three , by Cooler_
+unsigned bit_div3(unsigned num)
+{   
+ unsigned x,y;
+
+ x=(num>>2)+(num>>4); 
+ x+=x>>4;
+ x+=x>>8;
+ x+=x>>16;
+ y=num-((x<<2)-x);
+// this form is bad , return x+( ((y<<3)+(y<<2)-y)>>5);
+// this form is bad ,  return x+( (y+5+(y<<2)) >>4); 
+ return x+( (((y+1)<<2)+(y+1)) >>4);
+    
+}   
+
 
 
 // convert decimal to binary
