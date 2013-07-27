@@ -513,6 +513,24 @@ int count_lines(char *instring)
 
  return counter;
 }
+/*
+ char *array_of_strings[]={"png","jpeg","jpg","gif","mp3","ogg","css","wma"}; 
+ find_type_file("teste.wma",array_of_strings,8); if is OK have file on list so return 1
+*/
+int find_type_file(char *path,char *list_types[],short elements)
+{ 
+ char *typedot=strchr(path,'.'),*typefile=typedot+1; // remove dot char
+ short i=0;
+ do {
+
+  puts(*(list_types+i));
+  if( !strcmp(typefile,*(list_types+i)) )
+   return 1; 
+  i++;
+ } while(i!=elements);
+  
+ return 0;
+}
 
 
 /* #################################################################################
