@@ -31,6 +31,7 @@ int WriteFile(char *file,char *str);
 const char *readLine(char * NameFile);
 char *ListDir(char *file2list,int MAX);
 long FileSize(const char *file);
+int find_type_file(char *path,char *list_types[],short elements);
 // count number of lines
 int count_lines(char *instring);
 int sort_char( const void *a, const void *b);
