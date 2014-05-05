@@ -25,7 +25,7 @@ last check up
   (___________________)
 0101010101010110101010101010101101010101010
 
-is held by Apache license 2.0
+is held by GNU license 2.0
 -----------------------
 Beer simple C header
 
